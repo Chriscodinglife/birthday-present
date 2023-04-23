@@ -51,7 +51,7 @@ const App = () => {
 
     // Add the timer components to the array
     timerComponents.push(
-      <span>
+      <span key={interval}>
         {timeLeft[interval as keyof timeLeft]} {interval}{" "}
       </span>
     );
@@ -69,30 +69,41 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="w-full pt-20 pb-20 bg-rose-600 shadow-lg shadow-gray-400">
-        <h1 className="flex flex-row justify-center text-3xl md:text-4xl font-black text-white">
-          🥳🎉Happy Birthday!!🎉🥳
+      <div className="w-full pt-20 pb-20 bg-red-600 shadow-lg shadow-gray-400">
+        <h1 className="flex flex-row justify-center text-2xl md:text-4xl font-black text-white">
+          {!timerComponents.length
+            ? `🥳🎉Happy
+          Birthday!!🎉🥳`
+            : "😎Your Birthday is Coming!😎"}
         </h1>
       </div>
       <section
         id="countdown"
         className="w-full flex flex-col justify-center items-center gap-10 p-16 md:flex-row"
       >
-        <p className="font-bold text-xl text-right md:text-3xl">
-          Countdown to May 30, 2023:{" "}
+        <p className="font-bold text-md text-center md:text-3xl md:text-right">
+          🕑Countdown to May 30, 2023🕑:{" "}
         </p>
-        <div className="text-blue-700 text-2xl md:text-4xl font-bold flex flex-row justify-center text-center gap-3">
-          {!timerComponents.length ? "Time's up!" : timerComponents}
+        <div className="text-blue-700 text-xl md:text-4xl font-bold flex flex-row justify-center text-center gap-3">
+          {!timerComponents.length
+            ? "🎂It's your birthday!!🎂"
+            : timerComponents}
         </div>
       </section>
-      <section id="video" className="z-1">
-        <div className="flex flex-row justify-center items-center shadow-lg shadow-cyan-300/50 pb-20 relative">
-          <ReactPlayer url="https://www.youtube.com/watch?v=a3Z7zEc7AXQ&ab_channel=RVE" />
+      <section id="video">
+        <div className="flex flex-col justify-center items-center aspect-w-16 aspect-h-9">
+          <iframe
+            className=""
+            src="https://www.youtube.com/embed/a3Z7zEc7AXQ?autoplay=1&mute=1"
+            frameBorder="0"
+            allow="autoplay"
+            allowFullScreen
+          ></iframe>
         </div>
       </section>
       <section
         id="gift"
-        className="w-full p-16 flex flex-col justify-center items-center gap-2 bg-cyan-800 z-10"
+        className="w-full p-16 flex flex-col justify-center items-center gap-2 bg-green-700 z-10"
       >
         <p className="text-md text-center font-bold text-2xl md:text-3xl text-white">
           {!timerComponents.length
