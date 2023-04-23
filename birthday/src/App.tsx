@@ -19,7 +19,7 @@ const App = () => {
   const calculateTimeLeft = (): timeLeft => {
     // Get the current year
     let this_year = new Date().getFullYear();
-    const difference = +new Date(`5/30/${this_year}`) - +new Date();
+    const difference = +new Date(`4/23/${this_year}`) - +new Date();
 
     // Make a blank array to get the time thats left
     let timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
@@ -134,23 +134,23 @@ const App = () => {
             <p className="text-md text-center font-bold text-2xl md:text-3xl text-white mb-5">
               🎂Happy Birthday {birthdayName}!!🎂
             </p>
+            <p className="text-center md:text-center md:font-bold text-sm md:text-2xl text-white mb-5">
+              😲Here is your code for an Amazon Gift Card:
+            </p>
             <div className="flex flex-col md:flex-row justify-center gap-8">
-              <div className="flex flex-col justify-center items-center">
-                <p className="text-md text-center md:text-left md:font-bold text-lg md:text-2xl text-white mb-5">
-                  😲Here is your code for an Amazon Gift Card:
-                </p>
+              <div className="flex flex-col justify-center items-center w-[400px]">
                 <img
                   src="https://d13080yemosbe2.cloudfront.net/Images/GiftCardFaceplates/External/AMAZON_fp01.png"
                   alt="amazon gift card"
-                  className="w-4/6 md:w-3/6 rounded-lg shadow-white relative my-5"
+                  className="w-5/6 md:w-full rounded-lg shadow-white relative my-5"
                 />
               </div>
-              <div className="flex flex-col justify-center items-center">
-                <p className="text-md text-center md:text-md text-white m-2 p-7 bg-green-900 border-gray-800 rounded-lg">
+              <div className="flex flex-col justify-center items-center md:items-start gap-3">
+                <p className="text-md text-center md:text-md text-white p-7 m-1 bg-green-900 border-gray-800 rounded-lg">
                   {giftCard}
                 </p>
                 <button
-                  className="bg-purple-500 text-white font-bold text-md p-4 mt-5 rounded-md shadow-lg hover:bg-yellow-300 hover:text-black hover:shadow-neutral-50"
+                  className="bg-purple-500 text-white font-bold text-md p-7 m-1 rounded-lg shadow-lg hover:bg-yellow-300 hover:text-black hover:shadow-neutral-50"
                   onClick={handleAmazonButtonClick}
                 >
                   Redeem your Code
