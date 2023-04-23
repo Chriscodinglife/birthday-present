@@ -100,8 +100,8 @@ const App = () => {
         id="countdown"
         className="w-full flex flex-col justify-center items-center gap-10 p-16 md:flex-row"
       >
-        <p className="font-bold text-md text-center md:text-3xl md:text-right">
-          🕑Countdown to May 30, 2023🕑:{" "}
+        <p className="font-bold text-sm text-center md:text-3xl md:text-right">
+          🕑Countdown to May 30, 2023🕑
         </p>
         <div className="text-blue-700 text-xl md:text-4xl font-bold flex flex-row justify-center text-center gap-3">
           {!timerComponents.length
@@ -110,9 +110,9 @@ const App = () => {
         </div>
       </section>
       <section id="video">
-        <div className="flex flex-col justify-center items-center aspect-w-16 aspect-h-9">
+        <div className="flex flex-col justify-center items-center aspect-w-16 aspect-h-9 mb-20">
           <iframe
-            className=""
+            className="shadow-lg shadow-gray-400"
             src="https://www.youtube.com/embed/a3Z7zEc7AXQ?autoplay=1&mute=1"
             frameBorder="0"
             allow="autoplay"
