@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import ReactPlayer from "react-player";
 
 /* Create an App component that renders the following:
 - A title that says happy birthday
