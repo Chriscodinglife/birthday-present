@@ -19,7 +19,7 @@ const App = () => {
   const calculateTimeLeft = (): timeLeft => {
     // Get the current year
     let this_year = new Date().getFullYear();
-    const difference = +new Date(`5/30/${this_year}`) - +new Date();
+    const difference = +new Date(`4/23/${this_year}`) - +new Date();
 
     // Make a blank array to get the time thats left
     let timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
@@ -66,13 +66,33 @@ const App = () => {
     return () => clearTimeout(timer);
   });
 
+  // Create a state to store the name
+
+  const [birthdayName, setBirthdayName] = useState("!");
+  const [giftCard, setGiftCard] = useState("XXXX");
+
+  useEffect(() => {
+    // Fetch the value of the environment variable and set it as the initial value of birthdayName
+    if (import.meta.env.VITE_NAME) {
+      setBirthdayName(import.meta.env.VITE_NAME);
+    } else {
+      setBirthdayName("!");
+    }
+    // Fetch the value of the environment variable and set it as the initial value of giftCard
+    if (import.meta.env.VITE_CARD) {
+      setGiftCard(import.meta.env.VITE_CARD);
+    } else {
+      setGiftCard("XXXX");
+    }
+  }, []);
+
   return (
     <div className="App">
       <div className="w-full pt-20 pb-20 bg-red-600 shadow-lg shadow-gray-400">
         <h1 className="flex flex-row justify-center text-2xl md:text-4xl font-black text-white">
           {!timerComponents.length
             ? `🥳🎉Happy
-          Birthday!!🎉🥳`
+          Birthday ${birthdayName}!!🎉🥳`
             : "😎Your Birthday is Coming!😎"}
         </h1>
       </div>
@@ -106,7 +126,9 @@ const App = () => {
       >
         <p className="text-md text-center font-bold text-2xl md:text-3xl text-white">
           {!timerComponents.length
-            ? "Gift Card"
+            ? giftCard
+              ? "Aw man...uh..there was suppose to be a gift here...how embarrassing"
+              : `Here's your gift card! A Gift card for Amazon: ${giftCard}!`
             : "Make sure to come back here on your Birthday!"}
         </p>
       </section>
