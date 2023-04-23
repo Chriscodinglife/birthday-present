@@ -87,10 +87,7 @@ const App = () => {
       </section>
       <section id="video" className="z-1">
         <div className="flex flex-row justify-center items-center shadow-lg shadow-cyan-300/50 pb-20 relative">
-          <ReactPlayer
-            url="https://www.youtube.com/watch?v=a3Z7zEc7AXQ&ab_channel=RVE"
-            playing={true}
-          />
+          <ReactPlayer url="https://www.youtube.com/watch?v=a3Z7zEc7AXQ&ab_channel=RVE" />
         </div>
       </section>
       <section
