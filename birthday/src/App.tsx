@@ -88,8 +88,11 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="w-full pt-20 pb-20 bg-red-600 shadow-lg shadow-gray-400">
-        <h1 className="flex flex-row justify-center text-2xl md:text-4xl font-black text-white">
+      <div className="w-full flex flex-col justify-center items-center pt-20 pb-20 bg-red-600 shadow-lg shadow-gray-400">
+        <h1 className="text-2xl md:text-4xl font-black text-white">
+          Hey {birthdayName}!
+        </h1>
+        <h1 className="text-2xl md:text-4xl font-black text-white">
           {!timerComponents.length
             ? `🥳🎉Happy
           Birthday ${birthdayName}!!🎉🥳`
@@ -127,7 +130,7 @@ const App = () => {
         <p className="text-md text-center font-bold text-2xl md:text-3xl text-white">
           {!timerComponents.length && giftCard !== "X"
             ? `Here's your gift card! A Gift card for Amazon: ${giftCard}!`
-            : "Make sure to come back here on your Birthday!"}
+            : "👋Make sure to come back here on your Birthday!👋"}
         </p>
       </section>
     </div>
