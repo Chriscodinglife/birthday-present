@@ -69,7 +69,7 @@ const App = () => {
   // Create a state to store the name
 
   const [birthdayName, setBirthdayName] = useState("!");
-  const [giftCard, setGiftCard] = useState("XXXX");
+  const [giftCard, setGiftCard] = useState("");
 
   useEffect(() => {
     // Fetch the value of the environment variable and set it as the initial value of birthdayName
@@ -82,7 +82,7 @@ const App = () => {
     if (import.meta.env.VITE_CARD) {
       setGiftCard(import.meta.env.VITE_CARD);
     } else {
-      setGiftCard("XXXX");
+      setGiftCard("X");
     }
   }, []);
 
@@ -125,10 +125,8 @@ const App = () => {
         className="w-full p-16 flex flex-col justify-center items-center gap-2 bg-green-700 z-10"
       >
         <p className="text-md text-center font-bold text-2xl md:text-3xl text-white">
-          {!timerComponents.length
-            ? giftCard
-              ? "Aw man...uh..there was suppose to be a gift here...how embarrassing"
-              : `Here's your gift card! A Gift card for Amazon: ${giftCard}!`
+          {!timerComponents.length && giftCard !== "X"
+            ? `Here's your gift card! A Gift card for Amazon: ${giftCard}!`
             : "Make sure to come back here on your Birthday!"}
         </p>
       </section>
